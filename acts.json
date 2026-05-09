@@ -1,0 +1,146 @@
+{
+    "acts": [
+        {
+            "id": "ipc",
+            "name": "Indian Penal Code",
+            "short_name": "IPC",
+            "domain": "Criminal Law",
+            "year": "1860",
+            "description": "The IPC is the official criminal code of India. It is a comprehensive code intended to cover all substantive aspects of criminal law.",
+            "simplified_explanation": "Think of the IPC as the 'Rulebook of Wrongs'. it defines what acts are crimes (like theft, murder, or fraud) and tells you exactly what the punishment will be for each.",
+            "sections": [
+                {
+                    "id": "300",
+                    "title": "Murder",
+                    "meaning": "Culpable homicide is murder if the act by which the death is caused is done with the intention of causing death...",
+                    "ingredients": [
+                        "Intention of causing death",
+                        "Intention of causing such bodily injury as is likely to cause death",
+                        "Knowledge that the act is imminently dangerous"
+                    ],
+                    "example": "A shoots Z with the intention of killing him. A commits murder.",
+                    "cases": [
+                        "K.M. Nanavati v. State of Maharashtra",
+                        "State of AP v. R Punnayya"
+                    ]
+                },
+                {
+                    "id": "375",
+                    "title": "Rape",
+                    "meaning": "A man is said to commit 'rape' if he has sexual intercourse with a woman under certain circumstances...",
+                    "ingredients": [
+                        "Against her will",
+                        "Without her consent",
+                        "With her consent obtained by threat"
+                    ],
+                    "example": "Intercourse obtained through threat of arrest.",
+                    "cases": [
+                        "State of Punjab v. Gurmit Singh",
+                        "Independent Thought v. Union of India"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "constitution",
+            "name": "Constitution of India",
+            "short_name": "Constitution",
+            "domain": "Constitutional Law",
+            "year": "1950",
+            "description": "The supreme law of India establishing principal political code, structure, procedures, and duties of government institutions.",
+            "simplified_explanation": "The Constitution is the 'Grandparent of all Laws'. Every other law in India must follow it. It gives citizens their basic rights and tells the government how to run the country.",
+            "sections": [
+                {
+                    "id": "21",
+                    "title": "Right to Life",
+                    "meaning": "No person shall be deprived of his life or personal liberty except according to procedure established by law.",
+                    "ingredients": [
+                        "Right to live with dignity",
+                        "Procedure must be fair/just",
+                        "Broad interpretation"
+                    ],
+                    "example": "Right to shelter, right to privacy are extensions of Art 21.",
+                    "cases": [
+                        "Maneka Gandhi v. Union of India",
+                        "Justice K.S. Puttaswamy (Retd.) v. Union of India"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "evidence",
+            "name": "Indian Evidence Act",
+            "short_name": "Evidence Act",
+            "domain": "Civil Law",
+            "year": "1872",
+            "description": "Governs the admissibility of evidence in Indian Courts of Law.",
+            "simplified_explanation": "The Evidence Act is the 'Filter of Truth'. In court, you can't just say anything; this law decides which facts or documents the judge is allowed to look at to decide a case.",
+            "sections": [
+                {
+                    "id": "3",
+                    "title": "Definition of Evidence",
+                    "meaning": "'Evidence' means and includes all statements which the Court permits or requires to be made before it by witnesses...",
+                    "ingredients": [
+                        "Oral Statements",
+                        "Documentary Evidence",
+                        "Electronic records"
+                    ],
+                    "example": "A CCTV footage showing a theft is documentary (digital) evidence.",
+                    "cases": [
+                        "State of NCT of Delhi v. Navjot Sandhu"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "cpc",
+            "name": "Code of Civil Procedure",
+            "short_name": "CPC",
+            "domain": "Civil Law",
+            "year": "1908",
+            "description": "The law of procedure relating to the administration of civil proceedings in India.",
+            "simplified_explanation": "The CPC is the 'Roadmap for Civil Rights'. If someone owes you money or there's a property dispute, the CPC tells you exactly which papers to file and which court to go to.",
+            "sections": [
+                {
+                    "id": "9",
+                    "title": "Courts to try all civil suits",
+                    "meaning": "The Courts shall have jurisdiction to try all suits of a civil nature excepting suits of which their cognizance is either expressly or impliedly barred.",
+                    "ingredients": [
+                        "Civil nature",
+                        "Jurisdiction",
+                        "Explicit/Implicit bar"
+                    ],
+                    "example": "A suit for declaration of title to land is a civil suit.",
+                    "cases": [
+                        "P.M.A. Metropolitan v. Moran Mar Marthoma"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "crpc",
+            "name": "Code of Criminal Procedure",
+            "short_name": "CrPC",
+            "domain": "Criminal Law",
+            "year": "1973",
+            "description": "Procedural law for providing a machinery for the investigation of crime, apprehension of suspected criminals, collection of evidence, etc.",
+            "simplified_explanation": "CrPC is the 'Police & Court Handbook'. While IPC defines the crime, CrPC tells the police how to arrest someone and tells the judge how to conduct a trial.",
+            "sections": [
+                {
+                    "id": "154",
+                    "title": "Information in cognizable cases",
+                    "meaning": "Every information relating to the commission of a cognizable offence, if given orally to an officer in charge of a police station, shall be reduced to writing...",
+                    "ingredients": [
+                        "Cognizable offence",
+                        "Officer in charge",
+                        "Writing (FIR)"
+                    ],
+                    "example": "Reporting a robbery at the police station starts the FIR process under Sec 154.",
+                    "cases": [
+                        "Lalita Kumari v. Govt. of U.P."
+                    ]
+                }
+            ]
+        }
+    ]
+}

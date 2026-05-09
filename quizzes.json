@@ -1,0 +1,82 @@
+[
+    {
+        "id": "quiz_ipc",
+        "title": "IPC: Offences Against Person",
+        "subject": "Criminal Law",
+        "questions": [
+            {
+                "text": "Which section of IPC defines Murder?",
+                "options": [
+                    "Section 299",
+                    "Section 300",
+                    "Section 302",
+                    "Section 304"
+                ],
+                "answer": 1,
+                "explanation": "Section 300 of the IPC defines 'Murder', while Section 299 defines 'Culpable Homicide' and Section 302 provides the punishment for murder."
+            },
+            {
+                "text": "Common Intention is defined under which section?",
+                "options": [
+                    "Section 34",
+                    "Section 149",
+                    "Section 120A",
+                    "Section 107"
+                ],
+                "answer": 0,
+                "explanation": "Section 34 deals with acts done by several persons in furtherance of common intention."
+            },
+            {
+                "text": "Kidnapping from India is defined under Section ___?",
+                "options": [
+                    "359",
+                    "360",
+                    "361",
+                    "362"
+                ],
+                "answer": 1,
+                "explanation": "Section 360 defines 'Kidnapping from India', while 361 defines 'Kidnapping from lawful guardianship'."
+            }
+        ]
+    },
+    {
+        "id": "quiz_consti",
+        "title": "Constitution: Fundamental Rights",
+        "subject": "Constitutional Law",
+        "questions": [
+            {
+                "text": "The Basic Structure Doctrine was established in which case?",
+                "options": [
+                    "Minerva Mills",
+                    "Golak Nath",
+                    "Kesavananda Bharati",
+                    "A.K. Gopalan"
+                ],
+                "answer": 2,
+                "explanation": "The 13-judge bench in Kesavananda Bharati Sripadagalvaru v. State of Kerala (1973) established this doctrine."
+            },
+            {
+                "text": "Right to Privacy is a Fundamental Right under which Article?",
+                "options": [
+                    "Article 14",
+                    "Article 19",
+                    "Article 21",
+                    "Article 32"
+                ],
+                "answer": 2,
+                "explanation": "In Justice K.S. Puttaswamy v Union of India (2017), the SC declared Privacy as a part of Art 21."
+            },
+            {
+                "text": "Which Article allows the Supreme Court to issue Writs?",
+                "options": [
+                    "Article 32",
+                    "Article 226",
+                    "Article 136",
+                    "Article 142"
+                ],
+                "answer": 0,
+                "explanation": "Article 32 is the 'Right to Constitutional Remedies' for the SC. Art 226 is for High Courts."
+            }
+        ]
+    }
+]

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Explainer | LISA Student</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="../css/theme.css">
+    <link rel="stylesheet" href="../css/components.css">
+</head>
+
+<body class="bg-body">
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="dashboard.html" class="logo">
+                    <span class="material-symbols-rounded" style="color: var(--accent-color);">school</span>
+                    <span>LISA Student</span>
+                </a>
+            </div>
+            <nav class="sidebar-nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="dashboard.html"><span
+                                class="material-symbols-rounded">dashboard</span>Dashboard</a></li>
+                    <li class="nav-item"><a href="acts.html"><span
+                                class="material-symbols-rounded">menu_book</span>Simplified Acts</a></li>
+                    <li class="nav-item"><a href="cases.html"><span class="material-symbols-rounded">gavel</span>Case
+                            Library</a></li>
+                    <li class="nav-item active"><a href="explainer.html"><span
+                                class="material-symbols-rounded">psychology</span>AI Explainer</a></li>
+                    <li class="nav-item"><a href="quiz.html"><span class="material-symbols-rounded">quiz</span>Practice
+                            Tests</a></li>
+                    <li class="nav-item"><a href="notes.html"><span class="material-symbols-rounded">edit_note</span>My
+                            Notes</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <div class="main-wrapper">
+            <header class="top-header">
+                <h1 class="serif-font" style="font-size: 1.5rem;">AI Academic Explainer</h1>
+                <div style="display: flex; gap: 16px; align-items: center;">
+                    <div
+                        style="padding: 4px 12px; background: #fffbeb; color: #92400e; border: 1px solid #fde68a; border-radius: 4px; font-size: 0.75rem; font-weight: 600;">
+                        Prototype Interface
+                    </div>
+                    <button class="btn btn-secondary" id="search-trigger"><span
+                            class="material-symbols-rounded">search</span>Search</button>
+                </div>
+            </header>
+
+            <main class="content-area">
+                <div class="card" style="max-width: 800px; margin: 0 auto;">
+                    <h2 class="serif-font" style="margin-bottom: 8px;">Ask LISA AI</h2>
+                    <p class="text-muted" style="margin-bottom: 24px;">Get exam-oriented explanations or solve problem
+                        questions instantly.</p>
+
+                    <div style="margin-bottom: 24px;">
+                        <label style="display:block; font-weight:600; margin-bottom: 12px;">Suggested Topics</label>
+                        <div style="display: flex; gap: 8px; flex-wrap: wrap;" id="prompt-examples">
+                            <button class="btn btn-secondary" style="font-size: 0.8rem; padding: 6px 12px;"
+                                onclick="setPrompt('Meaning of Res Judicata with an illustration')">Res
+                                Judicata</button>
+                            <button class="btn btn-secondary" style="font-size: 0.8rem; padding: 6px 12px;"
+                                onclick="setPrompt('Article 21 and Right to Privacy')">Privacy Rights</button>
+                            <button class="btn btn-secondary" style="font-size: 0.8rem; padding: 6px 12px;"
+                                onclick="setPrompt('Ingredients of Theft under Sec 378 IPC')">Theft Ingredients</button>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 24px;">
+                        <label style="display:block; font-weight:600; margin-bottom: 8px;">Select Mode</label>
+                        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                            <button class="btn btn-secondary mode-btn active" data-mode="simple">Explain Simply</button>
+                            <button class="btn btn-secondary mode-btn" data-mode="exam">Explain for Exams
+                                (IRAC)</button>
+                            <button class="btn btn-secondary mode-btn" data-mode="problem">Apply to Problem</button>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 24px;">
+                        <label style="display:block; font-weight:600; margin-bottom: 8px;">Your Question / Topic</label>
+                        <textarea id="ai-input"
+                            placeholder="e.g. Explain Section 300 IPC Exception 1 with an example..."
+                            style="width:100%; height: 120px; padding: 16px; border-radius: 8px; border: 1px solid var(--border-color); font-family: inherit; font-size: 1rem; resize: none; outline: none; transition: border 0.2s;"></textarea>
+                    </div>
+
+                    <button id="explain-btn" class="btn btn-primary"
+                        style="width: 100%; height: 50px; font-size: 1.1rem;">
+                        <span class="material-symbols-rounded">magic_button</span> Generate Explanation
+                    </button>
+                </div>
+
+                <div id="ai-loading" style="display:none; text-align:center; padding: 40px;">
+                    <div
+                        style="width:40px; height:40px; border:4px solid var(--accent-color); border-top-color:transparent; border-radius:50%; animation: spin 1s linear infinite; margin: 0 auto 16px;">
+                    </div>
+                    <p class="text-muted">LISA is digesting legal concepts...</p>
+                </div>
+
+                <div id="ai-result" class="card"
+                    style="display:none; max-width: 800px; margin: 32px auto; padding: 40px;">
+                    <div id="result-header" style="margin-bottom: 24px;">
+                        <span id="result-tag" class="tag tag-consti" style="margin-bottom: 8px;"></span>
+                        <h2 id="result-title" class="serif-font"></h2>
+                    </div>
+                    <div id="result-content" style="line-height: 1.8;">
+                        <!-- Generated Content -->
+                    </div>
+                    <div
+                        style="margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border-color); display: flex; gap: 16px;">
+                        <button class="btn btn-secondary"><span class="material-symbols-rounded">content_copy</span>
+                            Copy</button>
+                        <button class="btn btn-secondary"><span class="material-symbols-rounded">save</span> Save to
+                            Notes</button>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Global Search -->
+    <div id="search-modal"
+        style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); z-index:2000; align-items:center; justify-content:center;">
+        <div class="card" style="width:90%; max-width:600px;">
+            <input type="text" id="modal-search-input" placeholder="Search..."
+                style="width:100%; padding:12px; border:1px solid var(--border-color); border-radius:8px; font-size:1.1rem; outline:none;">
+            <div id="search-results-box" style="margin-top:20px; max-height:400px; overflow-y:auto;"></div>
+            <button class="btn btn-secondary" style="margin-top:16px; width:100%;"
+                onclick="document.getElementById('search-modal').style.display='none'">Close</button>
+        </div>
+    </div>
+
+    <style>
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        #ai-input:focus {
+            border-color: var(--accent-color);
+        }
+    </style>
+
+    <script src="../auth.js"></script>
+    <script src="../js/ai-explainer.js"></script>
+    <script src="../js/search.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+:root {
+    /* Brand Colors - Academic Legal Palette */
+    --primary-color: #0f172a;
+    /* Navy Dark */
+    --secondary-color: #1e293b;
+    /* Navy Light */
+    --accent-color: #2563eb;
+    /* Professional Blue */
+    --accent-hover: #1d4ed8;
+
+    /* Functional Colors */
+    --success: #10b981;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+    --info: #3b82f6;
+
+    /* Legal Domain Colors */
+    --law-criminal: #b91c1c;
+    --law-civil: #1d4ed8;
+    --law-consti: #15803d;
+    --law-personal: #b45309;
+
+    /* Backgrounds & Surfaces */
+    --bg-body: #f8fafc;
+    --bg-surface: #ffffff;
+    --bg-sidebar: #0f172a;
+
+    /* Text Colors */
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --text-on-dark: #f8fafc;
+
+    /* Borders & Dividers */
+    --border-color: #e2e8f0;
+    --divider-color: rgba(255, 255, 255, 0.1);
+
+    /* Layout */
+    --sidebar-width: 260px;
+    --header-height: 70px;
+    --radius-lg: 12px;
+    --radius-md: 8px;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+.serif-font {
+    font-family: 'Merriweather', serif;
+}
+
+/* Layout Classes */
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.main-wrapper {
+    flex: 1;
+    margin-left: var(--sidebar-width);
+    display: flex;
+    flex-direction: column;
+}
+
+.content-area {
+    padding: 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+@media (max-width: 1024px) {
+    .main-wrapper {
+        margin-left: 0;
+    }
+}

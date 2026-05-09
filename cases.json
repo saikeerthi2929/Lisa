@@ -1,0 +1,80 @@
+[
+    {
+        "id": "kesavananda",
+        "name": "Kesavananda Bharati v. State of Kerala",
+        "year": "1973",
+        "court": "Supreme Court",
+        "verdict": "Basic Structure Doctrine",
+        "facts": "A religious head, Kesavananda Bharati, challenged the Kerala government's attempt to impose restrictions on the management of his property. This grew into a challenge of the Parliament's power to amend the Constitution.",
+        "issue": "Can the Parliament amend any part of the Constitution, including Fundamental Rights, and are there any limits to this power?",
+        "judgment": "A 13-judge bench (the largest ever) decided by a slim 7-6 majority that while Parliament can amend the Constitution, it cannot change its 'Basic Structure' (like secularism, democracy, federalism).",
+        "importance": "This is the most important case in Indian history. it prevents the government of the day from completely rewriting the Constitution or turning India into a dictatorship.",
+        "domain": "Constitutional Law",
+        "takeaway": "The Constitution is supreme; Parliament cannot destroy its core identity."
+    },
+    {
+        "id": "maneka-gandhi",
+        "name": "Maneka Gandhi v. Union of India",
+        "year": "1978",
+        "court": "Supreme Court",
+        "verdict": "Golden Triangle of Rights",
+        "facts": "Maneka Gandhi was ordered to surrender her passport by the government 'in public interest'. No reasons were given, and she wasn't allowed to explain her side.",
+        "issue": "Does the 'right to life and liberty' in Article 21 only mean following the written law, or must the law itself be fair and just?",
+        "judgment": "The Court ruled that any law depriving a person of liberty must not only follow a procedure but that procedure must be 'just, fair, and reasonable'. It linked Articles 14, 19, and 21 as a 'Golden Triangle'.",
+        "importance": "It ended the era where the government could pass any harsh law. It introduced 'Due Process' in India, ensuring citizens are always treated fairly by the law.",
+        "domain": "Constitutional Law",
+        "takeaway": "Justice is not just following rules; rules must be just."
+    },
+    {
+        "id": "vishaka",
+        "name": "Vishaka v. State of Rajasthan",
+        "year": "1997",
+        "court": "Supreme Court",
+        "verdict": "Workplace Guidelines",
+        "facts": "Bhanwari Devi, a social worker in Rajasthan, was gang-raped for stoping a child marriage. There were no laws in India at the time to protect women from sexual harassment at their workplace.",
+        "issue": "In the absence of a specific law, can the Supreme Court create rules to protect the fundamental rights of women at work?",
+        "judgment": "The Court issued the 'Vishaka Guidelines'—a set of rules that every workplace in India had to follow to prevent and handle sexual harassment of women.",
+        "importance": "This case showed that the Court can step in when the government fails to make necessary laws. These guidelines eventually led to the 2013 POSH Act.",
+        "domain": "Women Safety",
+        "takeaway": "Every woman has a fundamental right to a safe and dignified workplace."
+    },
+    {
+        "id": "ima-shantha",
+        "name": "Indian Medical Association v. V.P. Shantha",
+        "year": "1995",
+        "court": "Supreme Court",
+        "verdict": "Medical Services under Consumer Act",
+        "facts": "A dispute arose about whether patients who pay for medical treatment can be considered 'consumers' and if doctors can be sued in consumer courts for negligence.",
+        "issue": "Does medical treatment fall under the definition of 'service' in the Consumer Protection Act? Is a doctor a 'service provider'?",
+        "judgment": "The Court ruled that medical services provided for a fee are indeed 'services'. Therefore, patients are consumers and can seek compensation for negligence in consumer courts.",
+        "importance": "It made doctors and hospitals more accountable. Patients no longer had to wait years in civil courts for justice; they could go to faster consumer courts.",
+        "domain": "Consumer Law",
+        "takeaway": "Paying patients have the right to quality care and legal remedy for negligence."
+    },
+    {
+        "id": "nanavati",
+        "name": "K.M. Nanavati v. State of Maharashtra",
+        "year": "1961",
+        "court": "Supreme Court",
+        "verdict": "End of Jury Trials",
+        "facts": "Commander Nanavati found out his wife was having an affair. He went to his ship, got a gun, went to the lover's house, and shot him. A jury originally found him 'not guilty', claiming he acted in the heat of the moment.",
+        "issue": "Was the killing a 'sudden provocation' (lesser crime) or a 'premeditated murder' (major crime)? Also, should the jury's decision be final?",
+        "judgment": "The Supreme Court overturned the jury's verdict, ruling that since Nanavati went to his ship first, he had time to cool down. It was murder. This case led to the abolition of jury trials in India.",
+        "importance": "It established that technical legal points are better handled by trained judges than by a jury of emotional citizens. It changed the entire criminal trial system in India.",
+        "domain": "Criminal Law",
+        "takeaway": "The law values cool-headed justice over emotional reactions."
+    },
+    {
+        "id": "shakti-vahini",
+        "name": "Shakti Vahini v. Union of India",
+        "year": "2018",
+        "court": "Supreme Court",
+        "verdict": "Against Honor Killings",
+        "facts": "Khap Panchayats (community elders) in some parts of India were ordering 'honor killings' or harassing couples who married outside their caste or against family wishes.",
+        "issue": "Does an individual have the right to choose their spouse without interference from the family or community?",
+        "judgment": "The Court held that the right of two consenting adults to marry is a fundamental right under Article 21. No community group has a right to interfere or use violence.",
+        "importance": "It provided strong legal protection to inter-caste and inter-religious couples and held the police accountable for protecting such couples from 'Honor Crimes'.",
+        "domain": "Women Safety",
+        "takeaway": "Love and choice are protected by the Constitution; community elders cannot override them."
+    }
+]
