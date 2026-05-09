@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LISA - Citizen Registration</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Material Symbols -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-body" style="display: flex; align-items: center; justify-content: center; min-height: 100vh;">
+
+    <div class="card" style="max-width: 480px; width: 100%; padding: 40px; border-radius: 16px;">
+        <div style="text-align: center; margin-bottom: 32px;">
+            <div
+                style="width: 48px; height: 48px; background-color: #f0f9ff; color: var(--primary-color); border-radius: 12px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                <span class="material-symbols-rounded">person</span>
+            </div>
+            <h1 style="font-size: 1.5rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px;">Citizen
+                Sign Up</h1>
+            <p style="color: var(--text-secondary);">Create your secure account to access legal aid.</p>
+        </div>
+
+        <form id="citizen-form" action="dashboard.html" novalidate>
+            <!-- Full Name -->
+            <div style="margin-bottom: 20px;">
+                <label
+                    style="display: block; font-size: 0.9rem; font-weight: 500; margin-bottom: 8px; color: var(--text-primary);">Full
+                    Name <span style="color:red">*</span></label>
+                <div class="input-wrapper" id="name-wrapper">
+                    <span class="material-symbols-rounded" style="color: var(--text-muted);">badge</span>
+                    <input type="text" id="fullname" placeholder="John Doe"
+                        style="border: none; outline: none; width: 100%; font-family: inherit;">
+                </div>
+                <div class="error-msg">Name is required</div>
+            </div>
+
+            <!-- Email -->
+            <div style="margin-bottom: 20px;">
+                <label
+                    style="display: block; font-size: 0.9rem; font-weight: 500; margin-bottom: 8px; color: var(--text-primary);">Email
+                    Address <span style="color:red">*</span></label>
+                <div class="input-wrapper" id="email-wrapper">
+                    <span class="material-symbols-rounded" style="color: var(--text-muted);">mail</span>
+                    <input type="email" id="email" placeholder="john@example.com"
+                        style="border: none; outline: none; width: 100%; font-family: inherit;">
+                </div>
+                <div class="error-msg">Please enter a valid email address</div>
+            </div>
+
+            <!-- Phone (Optional) -->
+            <div style="margin-bottom: 20px;">
+                <label
+                    style="display: block; font-size: 0.9rem; font-weight: 500; margin-bottom: 8px; color: var(--text-primary);">Phone
+                    Number <span style="color: var(--text-muted); font-weight: normal;">(Optional)</span></label>
+                <div class="input-wrapper" id="phone-wrapper">
+                    <span class="material-symbols-rounded" style="color: var(--text-muted);">call</span>
+                    <input type="tel" id="phone" placeholder="+1 (555) 000-0000"
+                        style="border: none; outline: none; width: 100%; font-family: inherit;">
+                </div>
+            </div>
+
+            <!-- Password -->
+            <div style="margin-bottom: 24px;">
+                <label
+                    style="display: block; font-size: 0.9rem; font-weight: 500; margin-bottom: 8px; color: var(--text-primary);">Password
+                    <span style="color:red">*</span></label>
+                <div class="input-wrapper" id="password-wrapper">
+                    <span class="material-symbols-rounded" style="color: var(--text-muted);">lock</span>
+                    <input type="password" id="password" placeholder="Min. 8 characters"
+                        style="border: none; outline: none; width: 100%; font-family: inherit;">
+                </div>
+                <div class="error-msg">Password must be at least 8 characters</div>
+            </div>
+
+            <button type="submit" class="primary-btn"
+                style="width: 100%; padding: 14px; font-size: 1rem; margin-bottom: 24px;">Create Account</button>
+        </form>
+
+        <div style="text-align: center; font-size: 0.9rem; color: var(--text-secondary);">
+            Already have an account? <a href="citizen_login.html"
+                style="color: var(--primary-color); font-weight: 600; text-decoration: none;">Log In</a>
+        </div>
+
+        <div style="margin-top: 24px; text-align: center;">
+            <a href="register.html"
+                style="font-size: 0.85rem; color: var(--text-muted); text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                <span class="material-symbols-rounded" style="font-size: 16px;">arrow_back</span> Change Role
+            </a>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+    <script src="registration_warning.js"></script>
+    <script>
+        document.getElementById('citizen-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            let isValid = true;
+
+            // Name Check
+            const name = document.getElementById('fullname');
+            const nameWrapper = document.getElementById('name-wrapper');
+            if (name.value.trim() === '') {
+                nameWrapper.classList.add('error');
+                isValid = false;
+            } else {
+                nameWrapper.classList.remove('error');
+                nameWrapper.classList.add('success');
+            }
+
+            // Email Check
+            const email = document.getElementById('email');
+            const emailWrapper = document.getElementById('email-wrapper');
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email.value.trim())) {
+                emailWrapper.classList.add('error');
+                isValid = false;
+            } else {
+                emailWrapper.classList.remove('error');
+                emailWrapper.classList.add('success');
+            }
+
+            // Password Check
+            const pass = document.getElementById('password');
+            const passWrapper = document.getElementById('password-wrapper');
+            if (pass.value.length < 8) {
+                passWrapper.classList.add('error');
+                isValid = false;
+            } else {
+                passWrapper.classList.remove('error');
+                passWrapper.classList.add('success');
+            }
+
+            if (isValid) {
+                // Save user data and redirect
+                AuthManager.setUser('citizen', {
+                    name: name.value.trim(),
+                    email: email.value.trim(),
+                    phone: document.getElementById('phone').value.trim()
+                });
+                window.location.href = 'citizen_login.html?registered=true';
+            }
+        });
+    </script>
+</body>
+
+</html>

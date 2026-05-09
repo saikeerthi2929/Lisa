@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LISA - Dashboard</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Material Symbols -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="index.html" class="logo" style="text-decoration: none; color: white;">
+                    <span class="material-symbols-rounded logo-icon">balance</span>
+                    <span class="logo-text">LISA</span>
+                </a>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active">
+                        <a href="#">
+                            <span class="material-symbols-rounded">dashboard</span>
+                            <span class="nav-text">Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lawyer.html">
+                            <span class="material-symbols-rounded">gavel</span>
+                            <span class="nav-text">AI Lawyer</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="chat.html">
+                            <span class="material-symbols-rounded">smart_toy</span>
+                            <span class="nav-text">Chatbot</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="vault.html">
+                            <span class="material-symbols-rounded">folder_special</span>
+                            <span class="nav-text">Evidence Vault</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="nav-divider"></div>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <span class="material-symbols-rounded">settings</span>
+                            <span class="nav-text">Settings</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="material-symbols-rounded">help</span>
+                            <span class="nav-text">Help Center</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="AuthManager.switchRole(); return false;">
+                            <span class="material-symbols-rounded">swap_horiz</span>
+                            <span class="nav-text">Switch Role</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="AuthManager.logout(); return false;">
+                            <span class="material-symbols-rounded">logout</span>
+                            <span class="nav-text">Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-mini-profile">
+                    <div class="avatar"
+                        style="background-color: #0ea5e9; display: flex; align-items: center; justify-content: center; color: white; border-radius: 50%; width: 40px; height: 40px;">
+                        JD</div>
+                    <div class="user-info">
+                        <span class="user-name">Jane Doe</span>
+                        <span class="user-role">User</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Wrapper -->
+        <div class="main-wrapper">
+            <!-- Top Navbar -->
+            <header class="top-navbar">
+                <div class="nav-left">
+                    <button id="sidebar-toggle" class="icon-btn" aria-label="Toggle Sidebar">
+                        <span class="material-symbols-rounded">menu</span>
+                    </button>
+                    <h1 class="page-title" id="dashboard-title">Citizen Dashboard</h1>
+                </div>
+                <div class="nav-right">
+                    <!-- Role Switcher -->
+                    <div class="role-dropdown">
+                        <button class="role-toggle" id="role-toggle-btn">
+                            <span class="material-symbols-rounded">person</span>
+                            <span id="current-role">Citizen</span>
+                            <span class="material-symbols-rounded" style="font-size: 18px;">expand_more</span>
+                        </button>
+                        <div class="role-menu" id="role-menu">
+                            <div class="role-item current" onclick="switchRole('citizen')">
+                                <span class="material-symbols-rounded">person</span> Citizen
+                            </div>
+                            <div class="role-item" onclick="switchRole('student')">
+                                <span class="material-symbols-rounded">school</span> Law Student
+                            </div>
+                            <div class="role-item" onclick="switchRole('admin')">
+                                <span class="material-symbols-rounded">admin_panel_settings</span> Admin
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="search-bar">
+                        <span class="material-symbols-rounded search-icon">search</span>
+                        <input type="text" placeholder="Search...">
+                    </div>
+                    <button class="icon-btn notification-btn" aria-label="Notifications">
+                        <span class="material-symbols-rounded">notifications</span>
+                        <span class="badge">3</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Main Content Area -->
+            <main class="content-area">
+
+                <!-- 1. Citizen View -->
+                <div class="dashboard-panel" id="panel-citizen">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon case-active">
+                                <span class="material-symbols-rounded">chat</span>
+                            </div>
+                            <div class="stat-info">
+                                <h3>Active Inquiries</h3>
+                                <p class="stat-value">2</p>
+                                <span class="stat-trend positive">Response ready</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon hearing-upcoming">
+                                <span class="material-symbols-rounded">folder</span>
+                            </div>
+                            <div class="stat-info">
+                                <h3>Documents</h3>
+                                <p class="stat-value">5</p>
+                                <span class="stat-trend neutral">Vault Secured</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon tasks-pending">
+                                <span class="material-symbols-rounded">gavel</span>
+                            </div>
+                            <div class="stat-info">
+                                <h3>Upcoming Case</h3>
+                                <p class="stat-value">Mar 12</p>
+                                <span class="stat-trend neutral">High Court</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card recent-cases" style="margin-top: 24px;">
+                        <div class="card-header">
+                            <h2>My Legal Queries</h2>
+                        </div>
+                        <div class="card-body">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Subject</th>
+                                        <th>Status</th>
+                                        <th>Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Property Dispute (Inheritance)</td>
+                                        <td><span class="status-badge active">Answered</span></td>
+                                        <td>Today</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Consumer Rights Violation</td>
+                                        <td><span class="status-badge pending">Pending</span></td>
+                                        <td>Feb 01</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Law Student View -->
+                <div class="dashboard-panel" id="panel-student">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon tasks-pending">
+                                <span class="material-symbols-rounded">library_books</span>
+                            </div>
+                            <div class="stat-info">
+                                <h3>Study Hours</h3>
+                                <p class="stat-value">12.5h</p>
+                                <span class="stat-trend positive">This week</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon hours-billed">
+                                <span class="material-symbols-rounded">quiz</span>
+                            </div>
+                            <div class="stat-info">
+                                <h3>Quiz Score</h3>
+                                <p class="stat-value">85%</p>
+                                <span class="stat-trend positive">Top 10%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="guidance-grid" style="margin-top: 24px;">
+                        <a href="pages/dashboard.html" class="guidance-card"
+                            style="text-decoration: none; border-color: var(--primary-color);">
+                            <div class="guidance-header">
+                                <div class="guidance-icon icon-next">
+                                    <span class="material-symbols-rounded">auto_stories</span>
+                                </div>
+                                <h3>Continue Learning</h3>
+                            </div>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">Resume your module on
+                                Constitutional Law - Article 21.</p>
+                        </a>
+                        <div class="guidance-card">
+                            <div class="guidance-header">
+                                <div class="guidance-icon icon-docs">
+                                    <span class="material-symbols-rounded">bookmarks</span>
+                                </div>
+                                <h3>Saved Drafts</h3>
+                            </div>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">Moot Court memorial draft
+                                pending review.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Admin View -->
+                <div class="dashboard-panel" id="panel-admin">
+                    <div class="admin-stats">
+                        <div class="admin-card">
+                            <h3>Total Users</h3>
+                            <p>1,248</p>
+                        </div>
+                        <div class="admin-card">
+                            <h3>Active Sessions</h3>
+                            <p>42</p>
+                        </div>
+                        <div class="admin-card" style="background-color: #ef4444;">
+                            <h3>System Alerts</h3>
+                            <p>3</p>
+                        </div>
+                        <div class="admin-card" style="background-color: #10b981;">
+                            <h3>Server Status</h3>
+                            <p>99.9%</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>User Management</h2>
+                            <button class="primary-btn">Add User</button>
+                        </div>
+                        <div class="card-body">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>User</th>
+                                        <th>Role</th>
+                                        <th>Last Login</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Harini Katta</td>
+                                        <td><span class="mode-tag">Super Admin</span></td>
+                                        <td>Just now</td>
+                                        <td><button class="text-btn">Edit</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>John Doe</td>
+                                        <td>Citizen</td>
+                                        <td>2 hrs ago</td>
+                                        <td><button class="text-btn">Logs</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="auth.js"></script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

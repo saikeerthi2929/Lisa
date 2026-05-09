@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LISA - Evidence Vault</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Material Symbols -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-surface">
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar collapsed-mobile">
+            <div class="sidebar-header">
+                <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">
+                    <span class="material-symbols-rounded logo-icon">balance</span>
+                    <span class="logo-text">LISA</span>
+                </a>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            <span class="material-symbols-rounded">home</span>
+                            <span class="nav-text">Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lawyer.html">
+                            <span class="material-symbols-rounded">gavel</span>
+                            <span class="nav-text">AI Lawyer</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="dashboard.html">
+                            <span class="material-symbols-rounded">dashboard</span>
+                            <span class="nav-text">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="#">
+                            <span class="material-symbols-rounded">folder_special</span>
+                            <span class="nav-text">Evidence Vault</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="main-wrapper">
+            <header class="top-navbar">
+                <div class="nav-left">
+                    <h1 class="page-title">Evidence Vault</h1>
+                    <span class="secure-badge"><span class="material-symbols-rounded">lock</span> AES-256 Secured</span>
+                </div>
+                <div class="nav-right">
+                    <button class="primary-btn"><span class="material-symbols-rounded"
+                            style="font-size: 18px; margin-right: 8px;">upload</span> Upload Evidence</button>
+                    <div class="user-mini-profile">
+                        <img src="https://ui-avatars.com/api/?name=Jane+Doe&background=0D8ABC&color=fff" alt="User"
+                            class="avatar">
+                    </div>
+                </div>
+            </header>
+
+            <main class="content-area">
+                <!-- Upload Dropzone -->
+                <div class="upload-dropzone">
+                    <div class="dropzone-content">
+                        <span class="material-symbols-rounded upload-icon">cloud_upload</span>
+                        <h3>Drag & Drop files here</h3>
+                        <p>Supports Images (JPG, PNG), Documents (PDF, DOCX), and Audio (MP3, WAV)</p>
+                        <button class="text-btn">Browse Files</button>
+                    </div>
+                </div>
+
+                <!-- Filters -->
+                <div class="filter-bar">
+                    <button class="filter-chip active">All</button>
+                    <button class="filter-chip">Documents</button>
+                    <button class="filter-chip">Images</button>
+                    <button class="filter-chip">Audio Recordings</button>
+                </div>
+
+                <!-- Evidence Grid -->
+                <div class="evidence-grid">
+                    <!-- Evidence Item 1 -->
+                    <div class="evidence-card">
+                        <div class="evidence-preview image-preview">
+                            <span class="material-symbols-rounded">image</span>
+                        </div>
+                        <div class="evidence-info">
+                            <div class="evidence-header">
+                                <h4 class="evidence-title">Accident_Scene_01.jpg</h4>
+                                <button class="icon-btn-sm"><span
+                                        class="material-symbols-rounded">more_vert</span></button>
+                            </div>
+                            <div class="evidence-meta">
+                                <span class="meta-tag blue">Direct Evidence</span>
+                                <span class="meta-date">Feb 02, 2026 • 10:45 AM</span>
+                            </div>
+                            <div class="evidence-footer">
+                                <span class="secure-status"><span class="material-symbols-rounded">verified_user</span>
+                                    Encrypted</span>
+                                <span class="file-size">2.4 MB</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Evidence Item 2 -->
+                    <div class="evidence-card">
+                        <div class="evidence-preview doc-preview">
+                            <span class="material-symbols-rounded">description</span>
+                        </div>
+                        <div class="evidence-info">
+                            <div class="evidence-header">
+                                <h4 class="evidence-title">Signed_Contract_v2.pdf</h4>
+                                <button class="icon-btn-sm"><span
+                                        class="material-symbols-rounded">more_vert</span></button>
+                            </div>
+                            <div class="evidence-meta">
+                                <span class="meta-tag purple">Contractual</span>
+                                <span class="meta-date">Jan 28, 2026 • 02:15 PM</span>
+                            </div>
+                            <div class="evidence-footer">
+                                <span class="secure-status"><span class="material-symbols-rounded">verified_user</span>
+                                    Encrypted</span>
+                                <span class="file-size">845 KB</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Evidence Item 3 -->
+                    <div class="evidence-card">
+                        <div class="evidence-preview audio-preview">
+                            <span class="material-symbols-rounded">mic</span>
+                        </div>
+                        <div class="evidence-info">
+                            <div class="evidence-header">
+                                <h4 class="evidence-title">Witness_Statement.mp3</h4>
+                                <button class="icon-btn-sm"><span
+                                        class="material-symbols-rounded">more_vert</span></button>
+                            </div>
+                            <div class="evidence-meta">
+                                <span class="meta-tag orange">Testimonial</span>
+                                <span class="meta-date">Jan 15, 2026 • 09:30 AM</span>
+                            </div>
+                            <div class="evidence-footer">
+                                <span class="secure-status"><span class="material-symbols-rounded">verified_user</span>
+                                    Encrypted</span>
+                                <span class="file-size">14.2 MB</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="auth.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LISA - Student Registration</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Material Symbols -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .serif-text {
+            font-family: 'Merriweather', serif;
+        }
+
+        .academic-header {
+            border-bottom: 2px solid #e9d5ff;
+            padding-bottom: 16px;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        .academic-badge {
+            background-color: #f3e8ff;
+            color: #7e22ce;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+    </style>
+</head>
+
+<body class="bg-body"
+    style="display: flex; align-items: center; justify-content: center; min-height: 100vh; background-image: radial-gradient(#e9d5ff 1px, transparent 1px); background-size: 24px 24px;">
+
+    <div class="card"
+        style="max-width: 500px; width: 100%; padding: 48px; border-radius: 12px; border-top: 6px solid #9333ea; box-shadow: 0 10px 25px rgba(147, 51, 234, 0.1);">
+        <div class="academic-header">
+            <span class="academic-badge">Academic Access</span>
+            <h1 class="serif-text" style="font-size: 1.75rem; color: var(--text-primary); margin: 0;">Student Portal
+            </h1>
+            <p style="color: var(--text-secondary); margin-top: 8px; font-size: 0.95rem;">Join the future of legal
+                education.</p>
+        </div>
+
+        <form id="student-form" action="dashboard.html" novalidate>
+            <!-- Full Name -->
+            <div style="margin-bottom: 20px;">
+                <label
+                    style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px;">Full
+                    Name</label>
+                <div class="input-wrapper" id="name-wrapper" style="border-radius: 6px;">
+                    <span class="material-symbols-rounded" style="color: var(--text-muted);">badge</span>
+                    <input type="text" id="fullname" placeholder="Jane Scholar"
+                        style="border: none; outline: none; width: 100%; font-family: inherit;">
+                </div>
+                <div class="error-msg">Name is required</div>
+            </div>
+
+            <!-- College Name -->
+            <div style="margin-bottom: 20px;">
+                <label
+                    style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px;">College
+                    / University</label>
+                <div class="input-wrapper" id="college-wrapper" style="border-radius: 6px;">
+                    <span class="material-symbols-rounded" style="color: var(--text-muted);">account_balance</span>
+                    <input type="text" id="college" placeholder="National Law School"
+                        style="border: none; outline: none; width: 100%; font-family: inherit;">
+                </div>
+                <div class="error-msg">Institution name is required</div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <!-- Student ID -->
+                <div style="margin-bottom: 20px;">
+                    <label
+                        style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px;">Student
+                        ID</label>
+                    <div class="input-wrapper" id="id-wrapper" style="border-radius: 6px;">
+                        <span class="material-symbols-rounded" style="color: var(--text-muted);">id_card</span>
+                        <input type="text" id="studentid" placeholder="ID-2024-X"
+                            style="border: none; outline: none; width: 100%; font-family: inherit;">
+                    </div>
+                </div>
+
+                <!-- Email -->
+                <div style="margin-bottom: 20px;">
+                    <label
+                        style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px;">Email</label>
+                    <div class="input-wrapper" id="email-wrapper" style="border-radius: 6px;">
+                        <span class="material-symbols-rounded" style="color: var(--text-muted);">mail</span>
+                        <input type="email" id="email" placeholder=".edu preferred"
+                            style="border: none; outline: none; width: 100%; font-family: inherit;">
+                    </div>
+                    <div class="error-msg">Valid email required</div>
+                </div>
+            </div>
+
+            <!-- Password -->
+            <div style="margin-bottom: 32px;">
+                <label
+                    style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px;">Password</label>
+                <div class="input-wrapper" id="password-wrapper" style="border-radius: 6px;">
+                    <span class="material-symbols-rounded" style="color: var(--text-muted);">lock</span>
+                    <input type="password" id="password" placeholder="Min. 8 characters"
+                        style="border: none; outline: none; width: 100%; font-family: inherit;">
+                </div>
+                <div class="error-msg">Password min 8 chars</div>
+            </div>
+
+            <button type="submit" class="primary-btn"
+                style="width: 100%; padding: 16px; font-size: 1rem; margin-bottom: 24px; background-color: #7e22ce; border-radius: 6px;">Verify
+                & Register</button>
+        </form>
+
+        <div style="text-align: center; font-size: 0.9rem; color: var(--text-secondary);">
+            Already have an account? <a href="student_login.html"
+                style="color: #7e22ce; font-weight: 600; text-decoration: none;">Student Login</a>
+        </div>
+        <div style="margin-top: 24px; text-align: center;">
+            <a href="register.html"
+                style="font-size: 0.85rem; color: var(--text-muted); text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                <span class="material-symbols-rounded" style="font-size: 16px;">arrow_back</span> Change Role
+            </a>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+    <script src="registration_warning.js"></script>
+    <script>
+        document.getElementById('student-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            let isValid = true;
+
+            // Helper function
+            function validate(id, wrapperId, checkFn) {
+                const el = document.getElementById(id);
+                const wrapper = document.getElementById(wrapperId);
+                if (!checkFn(el.value.trim())) {
+                    wrapper.classList.add('error');
+                    wrapper.classList.remove('success');
+                    return false;
+                } else {
+                    wrapper.classList.remove('error');
+                    wrapper.classList.add('success');
+                    return true;
+                }
+            }
+
+            isValid &= validate('fullname', 'name-wrapper', v => v !== '');
+            isValid &= validate('college', 'college-wrapper', v => v !== '');
+            isValid &= validate('studentid', 'id-wrapper', v => v !== '');
+            isValid &= validate('email', 'email-wrapper', v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v));
+            isValid &= validate('password', 'password-wrapper', v => v.length >= 8);
+
+            if (isValid) {
+                // Save student user data and redirect
+                AuthManager.setUser('student', {
+                    name: document.getElementById('fullname').value.trim(),
+                    email: document.getElementById('email').value.trim(),
+                    college: document.getElementById('college').value.trim(),
+                    studentId: document.getElementById('studentid').value.trim()
+                });
+                window.location.href = 'student_login.html?registered=true';
+            }
+        });
+    </script>
+</body>
+
+</html>

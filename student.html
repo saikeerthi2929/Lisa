@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LISA Student – Legal Study Hub (India)</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Material Symbols -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-body student-mode">
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">
+                    <span class="material-symbols-rounded logo-icon">school</span>
+                    <span class="logo-text">LISA Student</span>
+                </a>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item active" data-target="dashboard">
+                        <a href="#"><span class="material-symbols-rounded">dashboard</span><span>Dashboard</span></a>
+                    </li>
+                    <li class="nav-item" data-target="acts-module">
+                        <a href="#"><span class="material-symbols-rounded">menu_book</span><span>Simplified
+                                Acts</span></a>
+                    </li>
+                    <li class="nav-item" data-target="cases-module">
+                        <a href="#"><span class="material-symbols-rounded">gavel</span><span>Case Summaries</span></a>
+                    </li>
+                    <li class="nav-item" data-target="explainer-module">
+                        <a href="#"><span class="material-symbols-rounded">psychology</span><span>AI
+                                Explainer</span></a>
+                    </li>
+                    <li class="nav-item" data-target="practice-module">
+                        <a href="#"><span class="material-symbols-rounded">quiz</span><span>Practice Tests</span></a>
+                    </li>
+                </ul>
+                <div class="nav-divider"></div>
+                <ul>
+                    <li class="nav-item" data-target="notes-module">
+                        <a href="#"><span class="material-symbols-rounded">edit_note</span><span>My Exam
+                                Notes</span></a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Wrapper -->
+        <div class="main-wrapper">
+            <header class="student-header">
+                <div class="header-left">
+                    <h1 class="page-title">Legal Study Hub</h1>
+                    <p class="header-subtitle">Your academic companion for Indian Laws.</p>
+                </div>
+                <div class="header-right" style="display: flex; gap: 16px; align-items: center;">
+                    <div class="search-bar" id="student-search-container" style="position: relative;">
+                        <span class="material-symbols-rounded search-icon">search</span>
+                        <input type="text" id="global-search" placeholder="Search Section 300 IPC, Case nicknames...">
+                        <div class="search-results-overlay" id="search-results"></div>
+                    </div>
+                    <button class="icon-btn"><span class="material-symbols-rounded">notifications</span><span
+                            class="badge">2</span></button>
+                </div>
+            </header>
+
+            <main id="main-content">
+                <!-- DASHBOARD VIEW -->
+                <section id="dashboard" class="content-view active">
+                    <div class="dashboard-grid">
+                        <div class="grid-left">
+                            <!-- Progress Section -->
+                            <div class="student-card" style="margin-bottom: 24px;">
+                                <h3 style="margin-bottom: 20px;">Study Progress Tracker</h3>
+                                <div class="progress-tracker">
+                                    <div class="progress-item">
+                                        <div style="display: flex; justify-content: space-between;">
+                                            <span>Indian Penal Code</span>
+                                            <span>65%</span>
+                                        </div>
+                                        <div class="progress-bar-bg">
+                                            <div class="progress-bar-fill"
+                                                style="width: 65%; background: var(--law-criminal);"></div>
+                                        </div>
+                                    </div>
+                                    <div class="progress-item">
+                                        <div style="display: flex; justify-content: space-between;">
+                                            <span>Constitutional Law</span>
+                                            <span>40%</span>
+                                        </div>
+                                        <div class="progress-bar-bg">
+                                            <div class="progress-bar-fill"
+                                                style="width: 40%; background: var(--law-constitutional);"></div>
+                                        </div>
+                                    </div>
+                                    <div class="progress-item">
+                                        <div style="display: flex; justify-content: space-between;">
+                                            <span>Civil Procedure Code</span>
+                                            <span>25%</span>
+                                        </div>
+                                        <div class="progress-bar-bg">
+                                            <div class="progress-bar-fill"
+                                                style="width: 25%; background: var(--law-civil);"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Cards for Recent Acts -->
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+                                <div class="student-card study-card-click" data-sec="300" data-act="IPC">
+                                    <div class="card-tag criminal-tag">Criminal Law</div>
+                                    <h4>IPC Section 300: Murder</h4>
+                                    <p style="font-size: 0.85rem; color: var(--text-secondary);">Last viewed 2 hours ago
+                                    </p>
+                                </div>
+                                <div class="student-card study-card-click" data-sec="21" data-act="Constitution">
+                                    <div class="card-tag consti-tag">Constitution</div>
+                                    <h4>Article 21: Right to Life</h4>
+                                    <p style="font-size: 0.85rem; color: var(--text-secondary);">Last viewed 1 day ago
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid-right">
+                            <div class="student-card" style="margin-bottom: 24px;">
+                                <h3 style="margin-bottom: 16px;">Today's Study Plan</h3>
+                                <ul class="study-plan-list">
+                                    <li class="study-item"><span class="material-symbols-rounded"
+                                            style="color: var(--law-criminal);">radio_button_unchecked</span><span>Exceptions
+                                            to Section 300 IPC</span></li>
+                                    <li class="study-item"><span class="material-symbols-rounded"
+                                            style="color: var(--law-constitutional);">radio_button_unchecked</span><span>Basic
+                                            Structure Doctrine Cases</span></li>
+                                    <li class="study-item"><span class="material-symbols-rounded"
+                                            style="color: var(--law-civil);">check_circle</span><span
+                                            style="text-decoration: line-through; color: var(--text-muted);">Res
+                                            Judicata Fundamentals</span></li>
+                                </ul>
+                            </div>
+
+                            <div class="student-card" style="background: var(--primary-color); color: white;">
+                                <h3>Revision Reminder</h3>
+                                <p style="font-size: 0.9rem; margin: 12px 0; opacity: 0.8;">You haven't revised
+                                    <strong>Transfer of Property Act</strong> in 5 days. Schedule a session?
+                                </p>
+                                <button class="primary-btn" style="width: 100%;">Start Revision</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ACTS MODULE -->
+                <section id="acts-module" class="content-view">
+                    <div class="module-container">
+                        <div class="section-viewer" id="section-viewer-content">
+                            <!-- Dynamically Loaded Content -->
+                            <div style="padding: 100px; text-align: center; color: var(--text-secondary);">
+                                <span class="material-symbols-rounded" style="font-size: 48px;">search_check</span>
+                                <p>Select an Act or search for a section to begin learning.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CASES MODULE -->
+                <section id="cases-module" class="content-view">
+                    <div class="module-container" id="cases-list-container">
+                        <!-- Case Cards -->
+                    </div>
+                </section>
+
+                <!-- EXPLAINER MODULE -->
+                <section id="explainer-module" class="content-view">
+                    <div class="module-container">
+                        <div class="student-card" style="max-width: 800px; margin: 0 auto;">
+                            <h2>AI Legal Explainer</h2>
+                            <p style="color: var(--text-secondary); margin-bottom: 24px;">Ask me to explain any concept,
+                                section, or problem question.</p>
+
+                            <div class="explainer-modes">
+                                <button class="mode-btn active" data-mode="new">Explain Like I'm New</button>
+                                <button class="mode-btn" data-mode="irac">IRAC (Exam Format)</button>
+                                <button class="mode-btn" data-mode="problem">Problem Solver</button>
+                                <button class="mode-btn" data-mode="quick">Quick Revision</button>
+                            </div>
+
+                            <div class="explainer-input" style="display: flex; gap: 12px; margin-bottom: 24px;">
+                                <textarea id="ai-query" placeholder="e.g. Explain Section 300 IPC Exception 1..."
+                                    style="flex: 1; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); resize: none;"></textarea>
+                                <button class="primary-btn" id="ai-explain-btn">Explain</button>
+                            </div>
+
+                            <div id="ai-response-area" class="s-tab-content"
+                                style="background: #f8fafc; border-radius: 12px; display: none;">
+                                <!-- AI Content -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- PRACTICE MODULE -->
+                <section id="practice-module" class="content-view">
+                    <div class="module-container" id="quiz-container">
+                        <!-- Quiz Content -->
+                    </div>
+                </section>
+
+                <!-- NOTES MODULE -->
+                <section id="notes-module" class="content-view">
+                    <div class="module-container">
+                        <div class="student-card" style="max-width: 800px; margin: 0 auto;">
+                            <h2>My Exam Notes</h2>
+                            <p style="color: var(--text-secondary); margin-bottom: 24px;">Your bookmarked sections and
+                                personal annotations.</p>
+
+                            <div class="study-item">
+                                <span class="material-symbols-rounded"
+                                    style="color: var(--law-criminal);">bookmark</span>
+                                <div>
+                                    <strong>Section 300 IPC: Murder Exceptions</strong><br>
+                                    <small>Bookmarked on Feb 5, 2026</small>
+                                </div>
+                            </div>
+                            <div class="study-item" style="margin-top: 12px;">
+                                <span class="material-symbols-rounded"
+                                    style="color: var(--law-constitutional);">bookmark</span>
+                                <div>
+                                    <strong>Article 21: Maneka Gandhi Case Summary</strong><br>
+                                    <small>Bookmarked on Feb 4, 2026</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+        </div>
+
+        <!-- Mode Toggle Bar -->
+        <div class="mode-toggle-bar">
+            <button class="m-toggle-btn active" data-mode="exam"><span
+                    class="material-symbols-rounded">history_edu</span><span>Exam Mode</span></button>
+            <button class="m-toggle-btn" data-mode="moot"><span class="material-symbols-rounded">gavel</span><span>Moot
+                    Court</span></button>
+            <button class="m-toggle-btn" data-mode="intern"><span
+                    class="material-symbols-rounded">work</span><span>Internship</span></button>
+        </div>
+    </div>
+
+    <!-- Student Logic -->
+    <script src="student.js"></script>
+</body>
+
+</html>

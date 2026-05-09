@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LISA - AI Lawyer Mode</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Material Symbols -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .guidance-container {
+            padding: 24px;
+            overflow-y: auto;
+            flex: 1;
+            background-color: #f8fafc;
+        }
+
+        .lawyer-guidance-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        /* Override generic guidance card for tight spaces */
+        .lawyer-guidance-grid .guidance-card {
+            font-size: 0.9rem;
+        }
+
+        .lawyer-guidance-grid .guidance-header h3 {
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+
+<body class="bg-surface">
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar collapsed-mobile">
+            <div class="sidebar-header">
+                <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">
+                    <span class="material-symbols-rounded logo-icon">balance</span>
+                    <span class="logo-text">LISA</span>
+                </a>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            <span class="material-symbols-rounded">home</span>
+                            <span class="nav-text">Home</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="#">
+                            <span class="material-symbols-rounded">gavel</span>
+                            <span class="nav-text">AI Lawyer</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="dashboard.html">
+                            <span class="material-symbols-rounded">dashboard</span>
+                            <span class="nav-text">Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="chat.html">
+                            <span class="material-symbols-rounded">smart_toy</span>
+                            <span class="nav-text">Chatbot</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Workspace -->
+        <div class="lawyer-workspace">
+            <!-- Top Navbar -->
+            <header class="top-navbar">
+                <div class="nav-left">
+                    <button id="sidebar-toggle" class="icon-btn" aria-label="Toggle Sidebar">
+                        <span class="material-symbols-rounded">menu</span>
+                    </button>
+                    <h1 class="page-title">AI Lawyer Mode</h1>
+                </div>
+                <div class="nav-right">
+                    <!-- Badge will be injected here -->
+                    <div class="search-bar" style="width: 250px;">
+                        <span class="material-symbols-rounded search-icon">search</span>
+                        <input type="text" placeholder="Search precedents...">
+                    </div>
+                </div>
+            </header>
+
+            <!-- Disclaimer Banner -->
+            <div class="disclaimer-banner">
+                <span class="material-symbols-rounded">warning</span>
+                <p><strong>Disclaimer:</strong> This tool provides legal guidance based on data patterns. It is not
+                    professional legal advice and created documents are not legally binding without attorney review.</p>
+                <button class="close-banner"><span class="material-symbols-rounded">close</span></button>
+            </div>
+
+            <div class="workspace-grid">
+                <!-- Left Panel: Conversation -->
+                <section class="conversation-panel">
+                    <header class="panel-header">
+                        <h2>Case Consultation</h2>
+                        <button class="icon-btn-sm" title="New Session"><span
+                                class="material-symbols-rounded">add_circle</span></button>
+                    </header>
+
+                    <div class="lawyer-chat-area">
+                        <div class="message bot-message">
+                            <div class="message-avatar lawyer-avatar">
+                                <span class="material-symbols-rounded">gavel</span>
+                            </div>
+                            <div class="message-content">
+                                <p>I am your AI Legal Assistant. I can help analyze cases, strategize, and draft
+                                    documents. What are we working on today?</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lawyer-input-area">
+                        <textarea placeholder="Describe the legal situation or request a document..."
+                            rows="3"></textarea>
+                        <div class="input-actions">
+                            <button class="icon-btn"><span class="material-symbols-rounded">attach_file</span></button>
+                            <button class="primary-btn">Analyze & Draft</button>
+                        </div>
+                    </div>
+
+                    <!-- Follow-up Area -->
+                    <div class="suggestion-chips">
+                        <span class="chip-label">Suggestions:</span>
+                        <button class="chip">Draft NDA</button>
+                        <button class="chip">Review Contract</button>
+                        <button class="chip">Case Precedent Search</button>
+                    </div>
+                </section>
+
+                <!-- Right Panel: Guidance / Document Drafting -->
+                <section class="drafting-panel">
+                    <header class="panel-header">
+                        <div class="panel-tabs">
+                            <button class="panel-tab active" id="tab-guidance"
+                                onclick="switchView('guidance')">Guidance</button>
+                            <button class="panel-tab" id="tab-document" onclick="switchView('document')">Draft</button>
+                        </div>
+                        <div class="panel-actions">
+                            <button class="icon-btn" title="Download"><span
+                                    class="material-symbols-rounded">download</span></button>
+                            <button class="icon-btn" title="Copy"><span
+                                    class="material-symbols-rounded">content_copy</span></button>
+                            <button class="icon-btn" title="Expand"><span
+                                    class="material-symbols-rounded">open_in_full</span></button>
+                        </div>
+                    </header>
+
+                    <!-- Action Guidance Container (Default View) -->
+                    <div class="guidance-container" id="guidance-view">
+                        <div class="lawyer-guidance-grid">
+                            <!-- What to do next -->
+                            <div class="guidance-card">
+                                <div class="guidance-header">
+                                    <div class="guidance-icon icon-next">
+                                        <span class="material-symbols-rounded">next_plan</span>
+                                    </div>
+                                    <h3>Next Steps</h3>
+                                </div>
+                                <div class="guidance-body">
+                                    <div class="checklist-item">
+                                        <div class="check-circle"><span class="material-symbols-rounded">check</span>
+                                        </div>
+                                        <span class="item-text">Schedule deposition</span>
+                                    </div>
+                                    <div class="checklist-item">
+                                        <div class="check-circle"><span class="material-symbols-rounded">check</span>
+                                        </div>
+                                        <span class="item-text">Review case precedents</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Who to contact -->
+                            <div class="guidance-card">
+                                <div class="guidance-header">
+                                    <div class="guidance-icon icon-contact">
+                                        <span class="material-symbols-rounded">contact_phone</span>
+                                    </div>
+                                    <h3>Contacts</h3>
+                                </div>
+                                <div class="guidance-body">
+                                    <div class="contact-item">
+                                        <div class="contact-avatar">SJ</div>
+                                        <div class="contact-info">
+                                            <strong>Sarah Jones</strong>
+                                            <span>Counsel</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Documents Required -->
+                            <div class="guidance-card">
+                                <div class="guidance-header">
+                                    <div class="guidance-icon icon-docs">
+                                        <span class="material-symbols-rounded">folder_zip</span>
+                                    </div>
+                                    <h3>Required Docs</h3>
+                                </div>
+                                <div class="guidance-body">
+                                    <div class="checklist-item">
+                                        <div class="check-circle"><span class="material-symbols-rounded">check</span>
+                                        </div>
+                                        <span class="item-text">Medical Reports</span>
+                                    </div>
+                                    <div class="checklist-item">
+                                        <div class="check-circle"><span class="material-symbols-rounded">check</span>
+                                        </div>
+                                        <span class="item-text">Incident Photos</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Document Editor (Hidden Initially) -->
+                    <div class="document-editor" id="document-view" style="display: none;">
+                        <div class="empty-state">
+                            <span class="material-symbols-rounded">description</span>
+                            <p>Drafting in progress...</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <script src="auth.js"></script>
+    <script src="lawyer.js"></script>
+</body>
+
+</html>
